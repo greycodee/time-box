@@ -6,7 +6,9 @@ import App from "./App";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <Container maxWidth="sm">
+    <Container sx={{
+      pt:2
+    }} maxWidth="sm">
       <App />
     </Container>
   </React.StrictMode>

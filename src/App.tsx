@@ -42,7 +42,11 @@ export default function App(){
             // alignItems:'center'
         }}
     >
-        <Typography variant="h4">Time Tool</Typography>
+        <Typography
+            sx={{
+                textAlign: 'center',
+            }}
+         variant="h4">Time Converter</Typography>
         <Box
             sx={{
                 display: 'flex',
@@ -50,7 +54,7 @@ export default function App(){
                 mt:2
             }}
         >
-            <InputLabel>当前北京时间：</InputLabel>
+            <InputLabel>System Time：</InputLabel>
             <Typography variant="h6">{currTime}</Typography>
         </Box>
         <Box
@@ -60,7 +64,7 @@ export default function App(){
                 mt:2
             }}
         >
-            <InputLabel>当前时间戳：</InputLabel>
+            <InputLabel>Unix TimeStamp：</InputLabel>
             <Typography variant="h6">{currUnixTime}</Typography>
         </Box>
         <Box
@@ -70,12 +74,21 @@ export default function App(){
                 mt:2
             }}
         >
-            <InputLabel>TimeStamp Convert (Millis) </InputLabel>
+            <InputLabel>TimeStamp Converter (Millis) </InputLabel>
             <TextField 
                 type={"number"}
                 onChange={(e) => setUnix(Number(e.target.value))}
                 />
+                <Typography
+                sx={{
+                    mt:2
+                }}
+             variant="subtitle1">{unixTimeConverted}</Typography>
             <Button
+                variant="outlined"
+                sx={{
+                    mt:2
+                }}
                 onClick={() => {
                     if (unix<0){
                         console.log("time error");
@@ -86,7 +99,7 @@ export default function App(){
                     // timestamp_convert();
                 }}
             >Convert</Button>
-            <Typography variant="subtitle1">{unixTimeConverted}</Typography>
+            
         </Box>
         
     </Box>)
